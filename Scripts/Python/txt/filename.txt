@@ -1,0 +1,7 @@
+fuerza bruta
+algoritmo de fuerza bruta
+que recibe como entrada
+permutaciones en orden lexicografico
+comentarios
+complejidad del peor caso
+salidas
