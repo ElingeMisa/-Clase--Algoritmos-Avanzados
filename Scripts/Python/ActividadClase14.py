@@ -48,7 +48,7 @@ def leer_aristas_y_construir_grafo(archivo):
     #print("Nodos en el grafo:", G.nodes)  # Verifica los nodos en el grafo
     return G
 
-grafo = leer_aristas_y_construir_grafo('/txt/aristas.txt')
+grafo = leer_aristas_y_construir_grafo('/Users/misa_v/Library/CloudStorage/OneDrive-InstitutoTecnologicoydeEstudiosSuperioresdeMonterrey/Sem 5/Algoritmos_/Scripts/Python/txt/aristas.txt')
 
 # amigos 
 nombres_amigos = ['Carlos', 'Ana', 'Marcela', 'Katia', 'Marcos']
@@ -62,7 +62,7 @@ def camino(grafo, inicio,nombre, objetivo):
         #camino_corto = nx.shortest_path(grafo, source=inicio, target=objetivo, weight='weight')
         #distancia_corta = nx.shortest_path_length(grafo, source=inicio, target=objetivo, weight='weight')
         camino_corto,distancia_corta = my_djikstra(grafo, inicio, objetivo)
-        return f"\nEl camino más corto desde {inicio} hasta {objetivo} (casa de {nombre}) es:\n\n\t{camino_corto} \n\tcon una distancia de [{distancia_corta}]"
+        return f"\nEl camino más corto desde {inicio} hasta {objetivo} (casa de {nombre}) es:\n\n\t{camino_corto} \n\tcon una distancia de [{distancia_corta}] tardando aproximadamente [{distancia_corta/speeds_amigos[nombres_amigos.index(nombre)]}] minutos"
     except nx.NetworkXNoPath:
         return f"No hay camino desde {inicio} hasta {objetivo}"
     except nx.NodeNotFound as e:
